@@ -1,0 +1,41 @@
+1. CREATE USER maria with password 'secure123';
+
+2. CREATE DATABASE college_db owner maria;
+
+3. CREATE TABLE students 
+(id serial PRIMARY KEY,
+ name varchar(80),
+ age integer,
+ hobby varchar(80)
+ );
+
+
+4. INSERT INTO students (name, age, hobby) 
+VALUES 
+  ('Timur', 25, 'chess'),
+  ('Diana', 34, 'painting'),
+  ('Maria', 22, 'dance');
+
+
+5. SELECT name, age FROM students;
+
+6. SELECT name FROM students WHERE age < 30;
+
+7. DELETE FROM students; или TRUNCATE students;
+
+8. DELETE FROM students WHERE age = 50 OR hobby = 'chess';
+
+9. DELETE FROM students WHERE age > 25 AND hobby = 'dance';
+
+10. SELECT name, age FROM students ORDER BY age DESC;
+
+11. INSERT INTO students (name, age, hobby)
+VALUES ('Sergey', 50, 'guitar');
+
+12. UPDATE students SET age = 23 WHERE name = 'Maria';
+
+13. DELETE FROM students WHERE hobby = 'painting';
+
+14. SELECT DISTINCT hobby FROM students;
+
+15. SELECT count(*) FROM students;
